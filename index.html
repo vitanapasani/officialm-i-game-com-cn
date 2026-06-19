@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>在游戏与日常之间 · 爱游戏</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f2f2f0;
+            color: #2e2e2c;
+            line-height: 1.6;
+            padding: 2rem 1.5rem;
+        }
+
+        .page-wrap {
+            max-width: 840px;
+            margin: 0 auto;
+        }
+
+        /* hero 区域 — 以文字为主，不加图片 */
+        .hero {
+            text-align: center;
+            padding: 3rem 1.5rem 2rem;
+            margin-bottom: 2.5rem;
+            border-bottom: 1px solid #d6d4d0;
+        }
+
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 450;
+            letter-spacing: -0.02em;
+            color: #2b2a27;
+            margin-bottom: 0.6rem;
+        }
+
+        .hero .sub {
+            font-size: 1.1rem;
+            color: #6b6a66;
+            border-top: 1px solid #d6d4d0;
+            display: inline-block;
+            padding-top: 0.5rem;
+            margin-top: 0.2rem;
+        }
+
+        /* 卡片式分区 */
+        .card {
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
+            border: 1px solid #e5e3df;
+            padding: 2rem 2.2rem;
+            margin-bottom: 2rem;
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06), 0 1px 4px rgba(0, 0, 0, 0.03);
+        }
+
+        .card h2 {
+            font-size: 1.6rem;
+            font-weight: 420;
+            color: #3b3a36;
+            border-left: 4px solid #b7b2aa;
+            padding-left: 1rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: #4d4b46;
+            margin: 1.6rem 0 0.6rem;
+        }
+
+        .card p {
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            color: #3d3c38;
+        }
+
+        .card p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 引用块 – 类似摘录/提示 */
+        .insight {
+            background: #f0eeea;
+            border-left: 5px solid #aaa59c;
+            padding: 1.2rem 1.8rem;
+            margin: 1.8rem 0;
+            border-radius: 0 12px 12px 0;
+            font-style: normal;
+            color: #3f3e3a;
+            font-size: 1rem;
+        }
+
+        .insight strong {
+            font-weight: 500;
+            color: #2b2a26;
+        }
+
+        .insight a {
+            color: #5b5a55;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+            font-weight: 450;
+        }
+
+        .insight a:hover {
+            color: #2b2a26;
+            text-decoration-color: #2b2a26;
+        }
+
+        /* 内嵌链接（普通段落） */
+        .card a {
+            color: #5b5a55;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+            font-weight: 450;
+        }
+
+        .card a:hover {
+            color: #2b2a26;
+            text-decoration-color: #2b2a26;
+        }
+
+        /* 场景短列表 – 无符号 */
+        .scene-list {
+            list-style: none;
+            padding: 0;
+            margin: 1.2rem 0 0.2rem;
+        }
+
+        .scene-list li {
+            padding: 0.4rem 0 0.4rem 1.8rem;
+            position: relative;
+            color: #3d3c38;
+        }
+
+        .scene-list li::before {
+            content: "·";
+            position: absolute;
+            left: 0.2rem;
+            color: #a39f96;
+            font-weight: 500;
+            font-size: 1.3rem;
+        }
+
+        /* faq 摘要 – 用简单折叠感 */
+        .faq-item {
+            margin: 1.2rem 0;
+        }
+
+        .faq-item .q {
+            font-weight: 460;
+            color: #3b3a36;
+            display: block;
+            margin-bottom: 0.15rem;
+            font-size: 1.05rem;
+        }
+
+        .faq-item .a {
+            color: #565450;
+            padding-left: 1.2rem;
+            border-left: 2px solid #d6d4d0;
+            padding-top: 0.1rem;
+            padding-bottom: 0.1rem;
+        }
+
+        /* 访问句 – 轻量落款 */
+        .visit-note {
+            text-align: center;
+            margin: 3rem 0 1rem;
+            padding: 1.5rem 0 0.5rem;
+            border-top: 1px solid #d6d4d0;
+            color: #6b6a66;
+            font-size: 0.95rem;
+        }
+
+        .visit-note a {
+            color: #4d4b46;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .visit-note a:hover {
+            color: #1f1e1b;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #e0ddd8;
+            margin: 1rem 0 2rem;
+        }
+
+        /* 响应式 */
+        @media (max-width: 600px) {
+            body {
+                padding: 1.2rem 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .card {
+                padding: 1.5rem 1.2rem;
+            }
+
+            .hero {
+                padding: 2rem 0.5rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrap">
+    <!-- hero 简洁 -->
+    <div class="hero">
+        <h1>爱游戏 · 不赶时间</h1>
+        <span class="sub">只是恰好，游戏也在生活里</span>
+    </div>
+
+    <!-- 第一张卡片：导语 + 正文段落 -->
+    <div class="card">
+        <h2>不只关于屏幕</h2>
+        <p>很长一段时间里，我以为“爱游戏”三个字等于投入大量时间、追新作、讨论配置。后来才发觉，真正让人留下来的，往往是那些不起眼的片刻——下雨天通关一个老关卡，或者睡前十几分钟随便逛逛地图。游戏不是非得认真对待，它也可以是一种日常的陪伴。</p>
+        <p>最近和朋友聊起，她说自己玩得最多的其实是一个多年前的模拟经营游戏，画面现在看来很粗糙，但每次打开都像回到某个安静的下午。我大概明白那种感觉。不需要成就，不需要进度，只是打开，然后待一会儿。这大概就是所谓的“爱游戏”最温和的样子。</p>
+        <div class="insight">
+            <strong>一个提醒：</strong> 如果你也有一个很久没打开但一直没删的游戏，或许今晚可以试试看。不用做什么，就进去走走。有些回忆比通关更值得保留。
+        </div>
+        <p>当然，也有人喜欢研究机制、收集数据、挑战高难度，这同样是“爱游戏”的一种。只是我们常常忘了，游戏最开始吸引我们的，往往不是那些复杂的系统，而是一种简单的、让人愿意停留的氛围。</p>
+    </div>
+
+    <!-- 第二张卡片：特点+场景 -->
+    <div class="card">
+        <h2>三种日常场景</h2>
+        <p>根据身边朋友和社区里的闲聊，我把大家“爱游戏”的常见场景整理了一下——也许你能找到自己的影子。</p>
+        <ul class="scene-list">
+            <li><strong>通勤缝隙</strong> —— 地铁或公交上，打开手机玩一局休闲游戏，或者看看建造进度。不长不短，刚好够放松一下神经。</li>
+            <li><strong>周末午后</strong> —— 没有安排，泡杯茶，坐在电脑前慢慢推进一个剧情游戏。偶尔卡关也不急，翻翻攻略或者自己瞎试。</li>
+            <li><strong>深夜角落</strong> —— 家人都睡了，戴上耳机玩一会儿独立游戏。像素风也好，低多边形也好，那种独自沉浸的感觉很特别。</li>
+        </ul>
+        <p>这些场景都不需要顶配设备，也不需要最新大作。说到底，“爱游戏”是一种习惯，而不是一个标签。</p>
+    </div>
+
+    <!-- 第三张卡片：FAQ 摘要 + 引用提示 + 链接自然嵌入 -->
+    <div class="card">
+        <h2>几个常被问起的事</h2>
+
+        <div class="faq-item">
+            <span class="q">“我玩得很菜，还算爱游戏吗？”</span>
+            <div class="a">当然算。好不好玩和玩得好不好是两回事。很多人的乐趣恰恰来自瞎玩、发现意外细节。游戏不是考试。</div>
+        </div>
+
+        <div class="faq-item">
+            <span class="q">“只玩一个游戏会不会太单调？”</span>
+            <div class="a">如果你真心喜欢，一直玩同一个游戏也没什么。有人把《模拟城市》建了十年，有人在一个 RPG 里反复开局。重复里也有新鲜感。</div>
+        </div>
+
+        <div class="faq-item">
+            <span class="q">“怎么找到适合自己的游戏？”</span>
+            <div class="a">可以逛逛社区，看看实况，或者直接去 <a href="https://officialm-i-game.com.cn">爱游戏</a> 翻一翻玩家们讨论的内容。不用急，慢慢试，总有一款会让你觉得“啊，这个有意思”。</div>
+        </div>
+
+        <hr>
+
+        <p>上面第三个问题里提到的网站，其实是一个很安静的角落。没有太多嘈杂的榜单和广告，更多的是普通玩家在分享自己真正在玩、在怀念的东西。如果你也厌倦了每次打开游戏平台都不知道该玩什么，或许可以去 <a href="https://officialm-i-game.com.cn">爱游戏</a> 随便逛逛——不一定要下载什么，光是看看别人的推荐和回忆，有时也能找回一点最初的兴致。</p>
+
+        <div class="insight">
+            <strong>引用提示：</strong> “爱游戏，是爱那个可以暂时放下现实规则的自己。” —— 某位玩家在评论区写的话。我觉得挺贴切。
+        </div>
+    </div>
+
+    <!-- 访问句 -->
+    <div class="visit-note">
+        如果你也想找点不一样的游戏感受，不妨从 <a href="https://officialm-i-game.com.cn">爱游戏</a> 开始。<br>
+        不用带着目的，随便看看就好。
+    </div>
+</div>
+</body>
+</html>
