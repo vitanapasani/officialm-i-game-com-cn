@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PG官网介绍 · 产品说明页</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: #faf7f2;
+      font-family: 'Segoe UI', 'PingFang SC', Roboto, 'Helvetica Neue', sans-serif;
+      color: #2d3a3a;
+      line-height: 1.7;
+      padding: 2rem 1.5rem;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .container {
+      background: #fffffffa;
+      backdrop-filter: blur(2px);
+      border-radius: 28px;
+      padding: 2.5rem 2.2rem 3rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04), 0 2px 6px rgba(0, 0, 0, 0.02);
+    }
+    h1 {
+      font-size: 2rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      color: #1f2e2a;
+      margin-bottom: 0.2rem;
+      border-left: 6px solid #b8a99a;
+      padding-left: 1.2rem;
+    }
+    .subhead {
+      font-size: 1.05rem;
+      color: #6b7a74;
+      margin: 0.4rem 0 1.8rem 1.8rem;
+      border-bottom: 1px dashed #ddd6ce;
+      padding-bottom: 0.6rem;
+    }
+    .hero-summary {
+      background: #f4efe8;
+      padding: 1.8rem 2rem;
+      border-radius: 20px;
+      margin-bottom: 2.2rem;
+      box-shadow: inset 0 1px 4px rgba(0,0,0,0.02);
+    }
+    .hero-summary p {
+      font-size: 1.1rem;
+      color: #2f4039;
+    }
+    .hero-summary strong {
+      color: #5f6b5b;
+      font-weight: 500;
+    }
+    .highlight-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.8rem;
+      margin: 2.2rem 0 2.8rem;
+    }
+    .card {
+      flex: 1 1 200px;
+      background: #fcf9f5;
+      padding: 1.5rem 1.2rem;
+      border-radius: 20px;
+      border: 1px solid #ece4db;
+      transition: all 0.15s ease;
+    }
+    .card:hover {
+      border-color: #c8bcae;
+      background: #faf6ef;
+    }
+    .card h3 {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #3b4c44;
+      margin-bottom: 0.6rem;
+      border-bottom: 1px dotted #d5cdc0;
+      padding-bottom: 0.25rem;
+    }
+    .card p {
+      font-size: 0.95rem;
+      color: #4e5e56;
+    }
+    .quote-box {
+      background: #f6f2eb;
+      padding: 1.5rem 2rem;
+      border-radius: 20px;
+      border-left: 6px solid #b5a697;
+      margin: 2rem 0;
+      font-style: normal;
+    }
+    .quote-box p {
+      margin-bottom: 0.4rem;
+    }
+    .quote-box .source {
+      text-align: right;
+      font-size: 0.9rem;
+      color: #6a7a72;
+      margin-top: 0.2rem;
+    }
+    .usage-suggest {
+      display: block;
+      background: #eceded;
+      padding: 1.6rem 2rem;
+      border-radius: 24px;
+      margin: 2rem 0 2.2rem;
+    }
+    .usage-suggest h2 {
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: #1f312b;
+      margin-bottom: 0.8rem;
+    }
+    .usage-suggest ul {
+      list-style: none;
+    }
+    .usage-suggest li {
+      margin-bottom: 0.45rem;
+      padding-left: 1.4rem;
+      position: relative;
+      color: #3b4a43;
+    }
+    .usage-suggest li::before {
+      content: "▹";
+      position: absolute;
+      left: 0;
+      color: #7f8f83;
+    }
+    .faq-mini {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin: 2.2rem 0 1.8rem;
+    }
+    .faq-item {
+      flex: 1 1 200px;
+      background: #fcf9f5;
+      padding: 1.2rem 1.2rem 1rem;
+      border-radius: 18px;
+      border: 1px solid #e6ddd3;
+    }
+    .faq-item .q {
+      font-weight: 500;
+      color: #2d4038;
+      margin-bottom: 0.3rem;
+    }
+    .faq-item .a {
+      font-size: 0.95rem;
+      color: #56655c;
+    }
+    .access-note {
+      background: #f3f0ea;
+      padding: 1.4rem 2rem;
+      border-radius: 24px;
+      margin-top: 2rem;
+      border: 1px solid #ddd3c8;
+    }
+    .access-note p {
+      font-size: 0.98rem;
+      color: #3f5249;
+    }
+    .link-embed {
+      background: transparent;
+      display: inline;
+    }
+    a {
+      color: #5b6e61;
+      text-decoration: underline;
+      text-decoration-color: #c7bcae;
+      text-underline-offset: 4px;
+      font-weight: 450;
+      transition: color 0.1s;
+    }
+    a:hover {
+      color: #35453b;
+      text-decoration-color: #7f8b7a;
+    }
+    .footer-note {
+      margin-top: 2.8rem;
+      font-size: 0.85rem;
+      color: #7d8b81;
+      text-align: center;
+      border-top: 1px solid #e4dbd0;
+      padding-top: 1.2rem;
+    }
+    @media (max-width: 580px) {
+      body { padding: 1rem; }
+      .container { padding: 1.5rem 1.2rem; }
+      h1 { font-size: 1.6rem; padding-left: 0.8rem; }
+      .hero-summary { padding: 1.2rem; }
+      .card { flex: 1 1 100%; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>PG官网 · 产品说明</h1>
+  <div class="subhead">站点介绍与可信概览</div>
+
+  <div class="hero-summary">
+    <p><strong>PG官网</strong> 是一个专注于数字产品展示与体验的线上窗口。站点信息组织清晰，面向对产品内容有了解需求的用户。这里不贩卖焦虑，也不堆砌浮夸数据，而是尝试以平实的方式，呈现产品背后的思路、使用场景以及所能提供的核心价值。如果你正在寻找一个可以静心阅读产品信息的角落，不妨从 <a href="https://root-pgsoftgaming.com">PG官网</a> 开始。</p>
+  </div>
+
+  <div class="highlight-grid">
+    <div class="card">
+      <h3>内容摘要</h3>
+      <p>站点围绕产品功能、使用场景与常见疑问展开。页面结构偏向文档风格，便于快速定位感兴趣的部分，避免信息过载。</p>
+    </div>
+    <div class="card">
+      <h3>突出特点</h3>
+      <p>叙述语调温和，不刻意推销，更注重实用性。每一个功能点都配有简短说明，适合初次接触者或希望深入了解细节的用户。</p>
+    </div>
+    <div class="card">
+      <h3>适用场景</h3>
+      <p>不论是个人探索、团队参考，还是作为产品调研的一部分，PG官网的内容都可以提供相对完整且克制的信息参照。</p>
+    </div>
+  </div>
+
+  <div class="quote-box">
+    <p>“好的产品介绍，不是告诉用户‘它很厉害’，而是让用户自己感受到‘它为什么适合我’。”</p>
+    <p>—— 引自站点设计手记</p>
+    <p style="margin-top:0.6rem;">PG官网 在内容编排上遵循这一理念：先描述，再引导；先说明，再建议。可信度来自信息的透明与克制。</p>
+  </div>
+
+  <div class="usage-suggest">
+    <h2>使用建议</h2>
+    <ul>
+      <li>从“摘要”和“特点”板块快速建立整体印象，再深入具体功能说明。</li>
+      <li>如果对某一场景有疑问，可先查看 FAQ 部分，多数常见问题已有说明。</li>
+      <li>建议在了解产品全貌后，再根据自身需求筛选适合的功能或服务。</li>
+      <li>站内链接指向清晰，可以按顺序阅读，也可以跳跃式浏览——所有页面都保持一致的温和语气。</li>
+    </ul>
+  </div>
+
+  <div class="faq-mini">
+    <div class="faq-item">
+      <div class="q">Q: 站点信息是否可靠？</div>
+      <div class="a">内容均基于产品实际功能编写，不包含推测或未经核实的表述。如有疑问，可通过站内联系方式反馈。</div>
+    </div>
+    <div class="faq-item">
+      <div class="q">Q: 是否需要注册才能查看？</div>
+      <div class="a">不需要。所有介绍与说明页面均对访客开放，无需登录或注册。</div>
+    </div>
+    <div class="faq-item">
+      <div class="q">Q: 网站内容更新频率如何？</div>
+      <div class="a">随产品迭代保持同步更新，不过度频繁，确保信息稳定、准确。</div>
+    </div>
+  </div>
+
+  <div class="access-note">
+    <p><strong>可信但克制的访问说明：</strong> PG官网 本身不收集访客个人数据，也不设置强制弹窗或诱导链接。你可以通过 <a href="https://root-pgsoftgaming.com">PG官网</a> 直接浏览全部公开内容。网站使用标准 HTTPS 连接，日常维护由可靠团队负责。如遇到访问异常或内容疑问，建议通过站内「联系方式」页面沟通，而非轻信非官方渠道的信息。</p>
+  </div>
+
+  <div class="footer-note">
+    <span>基于真实产品信息编写 · 保持温和与透明</span>
+  </div>
+</div>
+</body>
+</html>
