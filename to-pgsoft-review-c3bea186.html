@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PG官网 · 产品场景与用途卡</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background: #f9fafc;
+      color: #1e2a3a;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    .page {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 2.4rem 1.6rem 4rem;
+    }
+
+    /* 主视觉区域 */
+    .hero {
+      margin-bottom: 3.2rem;
+    }
+    .hero h1 {
+      font-size: 2.2rem;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      color: #0b1c2e;
+      margin-bottom: 0.6rem;
+    }
+    .hero .sub {
+      font-size: 1rem;
+      color: #5a6a7c;
+      max-width: 600px;
+    }
+
+    /* 用途卡片网格 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin: 2.2rem 0 2.8rem;
+    }
+    .card {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 1.6rem 1.5rem 1.8rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03), 0 1px 2px rgba(0,0,0,0.04);
+      transition: box-shadow 0.15s ease;
+      border: 1px solid #eef1f5;
+    }
+    .card:hover {
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05), 0 2px 6px rgba(0,0,0,0.03);
+      border-color: #dbe0e8;
+    }
+    .card .icon {
+      font-size: 1.7rem;
+      margin-bottom: 0.5rem;
+      display: block;
+      line-height: 1;
+    }
+    .card h3 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+      color: #12263a;
+    }
+    .card p {
+      font-size: 0.92rem;
+      color: #3e5267;
+      margin-bottom: 0.6rem;
+      line-height: 1.55;
+    }
+    .card .tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      background: #ecf0f5;
+      color: #2b4058;
+      padding: 0.15rem 0.7rem;
+      border-radius: 30px;
+      letter-spacing: 0.02em;
+    }
+
+    /* 适合人群区块 */
+    .audience {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 1.8rem 1.8rem 2rem;
+      margin: 2.2rem 0 2.5rem;
+      border: 1px solid #e8ecf2;
+    }
+    .audience h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1.2rem;
+      color: #0b1c2e;
+    }
+    .audience-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem 1.6rem;
+    }
+    .audience-item {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.95rem;
+      color: #1f3348;
+    }
+    .audience-item .marker {
+      width: 8px; height: 8px;
+      background: #cbd5e3;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* 自然链接段落 */
+    .link-section {
+      margin: 2.8rem 0 2rem;
+      padding: 1.8rem 0;
+      border-top: 1px solid #e2e8f0;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    .link-section p {
+      font-size: 1rem;
+      color: #1f3348;
+      max-width: 650px;
+    }
+    .link-section a {
+      color: #1e4a76;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      font-weight: 500;
+    }
+    .link-section a:hover {
+      color: #0a2f4f;
+    }
+
+    /* FAQ 摘要 */
+    .faq-summary {
+      margin-top: 2.8rem;
+    }
+    .faq-summary h2 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 1.2rem;
+      color: #0b1c2e;
+    }
+    .faq-item {
+      margin-bottom: 1.2rem;
+    }
+    .faq-item .q {
+      font-weight: 500;
+      color: #1d334b;
+      display: block;
+      margin-bottom: 0.2rem;
+      font-size: 0.98rem;
+    }
+    .faq-item .a {
+      font-size: 0.92rem;
+      color: #3e5269;
+      line-height: 1.6;
+    }
+
+    /* 极简脚注 */
+    .footnote {
+      margin-top: 3.5rem;
+      padding-top: 1.2rem;
+      font-size: 0.8rem;
+      color: #7c8b9e;
+      border-top: 1px solid #e8edf3;
+      text-align: left;
+    }
+
+    /* 响应式 */
+    @media (max-width: 600px) {
+      .page { padding: 1.6rem 1.2rem 3rem; }
+      .hero h1 { font-size: 1.8rem; }
+      .card-grid { grid-template-columns: 1fr; gap: 1rem; }
+      .audience-list { flex-direction: column; gap: 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <!-- 主视觉 -->
+  <div class="hero">
+    <h1>识别用途 · 快速定位</h1>
+    <div class="sub">面向需要了解 PG 产品场景与工具链的用户，以信息卡片展示核心能力。</div>
+  </div>
+
+  <!-- 用途卡片 -->
+  <div class="card-grid">
+    <div class="card">
+      <span class="icon">⚙️</span>
+      <h3>配置与集成</h3>
+      <p>提供标准化的接入方案，适用于开发者在现有架构中快速集成功能模块。</p>
+      <span class="tag">API 优先</span>
+    </div>
+    <div class="card">
+      <span class="icon">📊</span>
+      <h3>数据看板</h3>
+      <p>面向运营与管理人员，通过可视化面板查看状态、指标与关键事件。</p>
+      <span class="tag">实时更新</span>
+    </div>
+    <div class="card">
+      <span class="icon">🔐</span>
+      <h3>权限与安全</h3>
+      <p>细粒度角色控制与审计日志，帮助团队满足合规与内部管理要求。</p>
+      <span class="tag">RBAC</span>
+    </div>
+    <div class="card">
+      <span class="icon">🧩</span>
+      <h3>插件扩展</h3>
+      <p>支持自定义逻辑与第三方适配，降低重复开发成本，保持系统轻量。</p>
+      <span class="tag">开放生态</span>
+    </div>
+  </div>
+
+  <!-- 适合人群 -->
+  <div class="audience">
+    <h2>适合人群</h2>
+    <div class="audience-list">
+      <div class="audience-item"><span class="marker"></span> 产品与技术评估者</div>
+      <div class="audience-item"><span class="marker"></span> 后端与全栈开发者</div>
+      <div class="audience-item"><span class="marker"></span> 运维及平台负责人</div>
+      <div class="audience-item"><span class="marker"></span> 需要快速原型验证的团队</div>
+    </div>
+  </div>
+
+  <!-- 自然链接段落（嵌入 PG官网） -->
+  <div class="link-section">
+    <p>
+      如果你正在寻找一个结构清晰、文档详实的工具平台，可以前往 <a href="https://to-pgsoft.com">PG官网</a> 了解产品细节与最新版本说明。
+    </p>
+  </div>
+
+  <!-- FAQ 摘要 -->
+  <div class="faq-summary">
+    <h2>常见问题摘要</h2>
+    <div class="faq-item">
+      <span class="q">PG 主要解决什么问题？</span>
+      <div class="a">提供一套可组合的软件模块，帮助团队在统一框架下管理配置、权限与数据展示。</div>
+    </div>
+    <div class="faq-item">
+      <span class="q">是否需要长期绑定？</span>
+      <div class="a">产品基于开放标准，可逐步采用，现有系统无需大规模改造。</div>
+    </div>
+    <div class="faq-item">
+      <span class="q">有使用案例参考吗？</span>
+      <div class="a">官方站点收录了不同规模团队的集成故事，推荐查看 <a href="https://to-pgsoft.com" style="text-decoration:underline;color:#1e4a76;">PG官网</a> 的实践部分。</div>
+    </div>
+  </div>
+
+  <!-- 脚注 -->
+  <div class="footnote">
+    信息卡片式介绍 · 内容基于产品公开信息整理
+  </div>
+</div>
+</body>
+</html>
