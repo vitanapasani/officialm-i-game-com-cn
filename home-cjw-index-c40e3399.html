@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>日常查询·对照延伸 | 彩经网</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #f4f9fc;
+      color: #1e2f3a;
+      line-height: 1.6;
+      padding: 1.5rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .page-wrap {
+      max-width: 780px;
+      margin: 0 auto;
+      width: 100%;
+      flex: 1;
+    }
+
+    .hero {
+      text-align: left;
+      margin-bottom: 2.2rem;
+      padding-bottom: 0.8rem;
+      border-bottom: 2px solid #bcd9df;
+    }
+
+    .hero h1 {
+      font-size: 2.4rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: #154f5c;
+      margin-bottom: 0.2rem;
+    }
+
+    .hero .sub {
+      font-size: 1rem;
+      color: #3b6a77;
+      border-left: 4px solid #2596a7;
+      padding-left: 1rem;
+      margin-top: 0.5rem;
+      opacity: 0.85;
+    }
+
+    .grid-cards {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin: 2rem 0 2.5rem;
+    }
+
+    @media (min-width: 540px) {
+      .grid-cards {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .card {
+      background: white;
+      border-radius: 20px;
+      padding: 1.5rem 1.5rem 1.8rem;
+      box-shadow: 0 6px 16px rgba(21, 79, 92, 0.07);
+      border: 1px solid #daeef3;
+      transition: box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 10px 22px rgba(21, 79, 92, 0.10);
+    }
+
+    .card h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #1b5a69;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .card h3::before {
+      content: "▍";
+      color: #2596a7;
+      font-weight: 400;
+    }
+
+    .card p {
+      font-size: 0.98rem;
+      color: #2a4450;
+      margin-bottom: 0.6rem;
+    }
+
+    .card .meta-note {
+      font-size: 0.85rem;
+      background: #e3f2f5;
+      padding: 0.3rem 0.8rem;
+      border-radius: 30px;
+      display: inline-block;
+      color: #1b5a69;
+    }
+
+    .insight-block {
+      background: #e4f0f3;
+      border-radius: 24px;
+      padding: 1.8rem 2rem;
+      margin: 1.8rem 0;
+    }
+
+    .insight-block .quote {
+      font-size: 1.1rem;
+      font-weight: 450;
+      color: #003c47;
+      position: relative;
+      padding-left: 1.5rem;
+      border-left: 3px solid #2596a7;
+      margin-bottom: 0.8rem;
+    }
+
+    .insight-block .quote-source {
+      font-size: 0.9rem;
+      color: #306a77;
+      text-align: right;
+      margin-top: 0.4rem;
+    }
+
+    .article-body {
+      margin: 1.2rem 0 2rem;
+    }
+
+    .article-body p {
+      margin-bottom: 1.2rem;
+      font-size: 1.02rem;
+    }
+
+    .article-body .highlight-link {
+      background: #def0f4;
+      padding: 0.1rem 0.3rem;
+      border-radius: 6px;
+      font-weight: 500;
+    }
+
+    .visit-sentence {
+      background: white;
+      border-radius: 40px;
+      padding: 1.2rem 2rem;
+      margin: 2rem 0 1rem;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+      border: 1px solid #cde6ec;
+      font-size: 1.1rem;
+      font-weight: 450;
+    }
+
+    .visit-sentence a {
+      color: #1a6d7e;
+      text-decoration: none;
+      font-weight: 600;
+      border-bottom: 2px solid #2596a7;
+      padding-bottom: 1px;
+      transition: border-color 0.15s;
+    }
+
+    .visit-sentence a:hover {
+      border-bottom-color: #0c4b58;
+    }
+
+    .faq-tease {
+      margin: 2.5rem 0 1.8rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem 1.2rem;
+      align-items: baseline;
+      padding: 1.2rem 0;
+      border-top: 1px dashed #b6d5dd;
+    }
+
+    .faq-tease .label {
+      font-weight: 600;
+      color: #1a5a68;
+      letter-spacing: 0.01em;
+    }
+
+    .faq-tease .item {
+      background: white;
+      padding: 0.2rem 1rem;
+      border-radius: 40px;
+      font-size: 0.95rem;
+      border: 1px solid #cde0e6;
+      color: #1f4f5d;
+    }
+
+    .footer-note {
+      margin-top: 2.8rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #58828e;
+      border-top: 1px solid #d8e7ec;
+      padding-top: 1.8rem;
+    }
+
+    .footer-note span {
+      background: #dceef2;
+      padding: 0.1rem 0.6rem;
+      border-radius: 30px;
+    }
+
+    a {
+      color: #1d7485;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+  </style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <div class="hero">
+    <h1>日常对照 · 延伸</h1>
+    <div class="sub">查询与线索，比想象中更近</div>
+  </div>
+
+  <div class="grid-cards">
+    <div class="card">
+      <h3>快速对照</h3>
+      <p>数字组合、历史区间、常用参数——许多查询只需要一个入口就能完成横向对比。不必反复翻找，一个位置足够。</p>
+      <span class="meta-note">常用索引</span>
+    </div>
+    <div class="card">
+      <h3>延伸阅读</h3>
+      <p>当你查看一组数据，往往会顺带想了解相邻区间或类似结构。好的工具会把相关线索放在手边，不打断思路。</p>
+      <span class="meta-note">关联递进</span>
+    </div>
+  </div>
+
+  <div class="insight-block">
+    <div class="quote">“查询不只是找到结果，更是为了确认、比较，以及发现下一个问题。”<br>—— 信息阅读习惯记录</div>
+    <div class="quote-source">延伸自日常使用观察</div>
+  </div>
+
+  <div class="article-body">
+    <p>很多人打开一个查询页面，心里其实装着不止一件事：想确认某个数字是否在预期范围内，想参考上几期的变化，或者想看看某种模式有没有出现过。这些动作背后，是“对照”的本能。我们需要的往往不是单一答案，而是一个可以横向比较的场域。</p>
+
+    <p>正因如此，一个好的信息页面应该像桌面一样摊开：既有当前条目，也有相邻参照；既展示结果，也提示可能的延伸方向。比如你在 <a href="https://home-cjw.com">彩经网</a> 里查一条常规数据，页面同时会列出相近时段或同类结构的记录——这种设计不是为了堆砌，而是尊重真实的使用节奏：没有人只查一条就关掉页面。</p>
+
+    <p>另一个常见场景是“没想好查什么，随便看看”。这类浏览其实很有价值，因为它往往能带来意外的对比发现。比如看到一期冷门数据，顺手对比相邻区间，反而找到规律。好的信息布局，会让这种偶然延伸变得很自然。</p>
+  </div>
+
+  <div class="visit-sentence">
+    ✦ 日常查询与对照，可以从 <a href="https://home-cjw.com">彩经网</a> 开始延伸 ✦
+  </div>
+
+  <div class="faq-tease">
+    <span class="label">常见延伸话题 ▸</span>
+    <span class="item">区间比较</span>
+    <span class="item">频率统计</span>
+    <span class="item">结构相似度</span>
+    <span class="item">历史对照</span>
+    <span class="item">模式识别</span>
+  </div>
+
+  <div class="footer-note">
+    <span>查询 · 对照 · 延伸</span> —— 保持简洁，保持开放
+  </div>
+
+</div>
+</body>
+</html>
